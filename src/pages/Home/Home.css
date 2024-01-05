@@ -1,14 +1,31 @@
 .select_title_feature {
+    display: flex;
     margin: 40px 120px 40px 50px;
+    gap:20px;
 }
 
-.genreList_multiselect{
-    width:40%;
+.genreList_select{
+    width:10%;
 }
 
-.multiSelectContainer li {
-    color: black;
+select{
+    background-color: #252833;
+    color: white;
+    border-radius: 4px;
+    border: 2px solid white;
 }
+
+option{
+    background-color: #252833;
+    color: white;
+}
+
+input[type="text"] {
+    background-color: #252833;
+    color: white;
+    border-radius: 4px;
+    border: 2px solid white;
+} 
 
 .movie_schedule_date {
     font-size: 24px;
@@ -23,8 +40,8 @@
     overflow: hidden;
     margin: 0.19rem;
     cursor:pointer;
-    min-width:200px;
-    height:300px;
+    min-width:130px;
+    height:200px;
     z-index:0;
     border: 1px solid rgb(99, 99, 99);
     margin:10px;
@@ -37,14 +54,14 @@
 }
 
 .movie_cards__img {
-    height: 300px;
+    height: 200px;
 }
 
 .movie_cards__overlay {
     position: absolute;
     padding: 0 1rem 1rem 1rem;
     bottom: 0px;
-    height: 290px;
+    height: 195px;
     display: flex;
     flex-direction: column;
     width: 85%;
@@ -60,28 +77,28 @@
 
 .movie_card__title {
     font-weight: 900;
-    font-size: 1rem;
-    margin-bottom: 0.4rem;
+    font-size: 0.7rem;
+    margin-bottom: 0.2rem;
 }
 
 .movie_card__genres {
-    margin-bottom: 4px;
+    margin-bottom: 2px;
 }
 
 .movie_card__genre {
-    font-size: .75rem;
+    font-size: .5rem;
     border: 1px solid white;
     border-radius: 5px;
-    padding:2px;
-    margin-right:3px;
+    padding:1px;
+    margin-right:1.5px;
     float: left;
-    margin-top: 4px;
+    margin-top: 2px;
 }
 
 .movie_card__runtime {
-    font-size: .75rem;
-    margin-bottom: 0.25rem;
-    margin-top:0.25rem;
+    font-size: .5rem;
+    margin-bottom: 0.12rem;
+    margin-top:0.12rem;
 }
 
 .movie_card__rating {
@@ -89,9 +106,9 @@
 }
 
 .movie_card__year {
-    font-size: .75rem;
-    margin-bottom: 0.25rem;
-    margin-top:0.25rem;
+    font-size: .5rem;
+    margin-bottom: 0.12rem;
+    margin-top:0.12rem;
 }
 
 .metacritic_image{
@@ -106,6 +123,7 @@
 
 .movie_card__description {
     font-style: italic;
-    font-size: .75rem;
+    font-size: .6rem;
     margin-bottom: 0.25rem;
+    opacity: 0.5;
 }

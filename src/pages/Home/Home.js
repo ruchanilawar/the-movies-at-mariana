@@ -5,20 +5,20 @@ import metacritic from '../../media/metacritic.png';
 
 const Home = ({ data }) => {
   const [genres, setGenres] = useState([]);
-  const [selectedGenre, setSelectedGenre] = useState('all');
+  const [selectedGenre, setSelectedGenre] = useState('All');
   const [searchTerm, setSearchTerm] = useState('');
   const [filteredMovies, setFilteredMovies] = useState([]);
 
   useEffect(() => {
     console.log(data);
     // Extract genres from data
-    const allGenres = new Set();
+    const AllGenres = new Set();
     data.forEach(day => {
       day.movies.forEach(movie => {
-        movie.genre.forEach(genre => allGenres.add(genre));
+        movie.genre.forEach(genre => AllGenres.add(genre));
       });
     });
-    setGenres(['all', ...Array.from(allGenres)]);
+    setGenres(['All', ...Array.from(AllGenres)]);
   }, [data]);
 
   useEffect(() => {
@@ -26,7 +26,7 @@ const Home = ({ data }) => {
     const filtered = data.flatMap(day =>
       day.movies
         .filter(movie =>
-          (selectedGenre === 'all' || movie.genre.includes(selectedGenre)) &&
+          (selectedGenre === 'All' || movie.genre.includes(selectedGenre)) &&
           movie.title.toLowerCase().includes(searchTerm.toLowerCase())
         )
         .map(movie => ({ ...movie, date: day.date })) // Add date to each movie
@@ -72,17 +72,16 @@ const Home = ({ data }) => {
 
   return (
     <div>
-      <label htmlFor="genreFilter">Filter by Genre:</label>
-      <select id="genreFilter" value={selectedGenre} onChange={handleGenreChange}>
-        {genres.map(genre => (
-          <option key={genre} value={genre}>{genre}</option>
-        ))}
-      </select>
-
-      <br />
-
-      <label htmlFor="titleSearch">Search by Title:</label>
-      <input type="text" id="titleSearch" value={searchTerm} onChange={handleSearchChange} />
+      <div className="select_title_feature">
+        <label htmlFor="genreFilter">Filter by Genre:</label>
+        <select id="genreFilter" value={selectedGenre} onChange={handleGenreChange} className="genreList_select">
+          {genres.map(genre => (
+            <option key={genre} value={genre}>{genre}</option>
+          ))}
+        </select>
+        <label htmlFor="titleSearch">Search by Title:</label>
+        <input type="text" id="titleSearch" value={searchTerm} onChange={handleSearchChange} />
+      </div>
 
       <ul>
           {filteredMovies.map(movieList => {
