@@ -1,0 +1,111 @@
+.select_title_feature {
+    margin: 40px 120px 40px 50px;
+}
+
+.genreList_multiselect{
+    width:40%;
+}
+
+.multiSelectContainer li {
+    color: black;
+}
+
+.movie_schedule_date {
+    font-size: 24px;
+    padding:10px;
+}
+
+.movie_cards {
+    display: inline-block;
+    transition: transform .2s;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 0.19rem;
+    cursor:pointer;
+    min-width:200px;
+    height:300px;
+    z-index:0;
+    border: 1px solid rgb(99, 99, 99);
+    margin:10px;
+}
+
+.movie_cards:hover {
+    transform: scale(1.2);
+    z-index: 1000;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.movie_cards__img {
+    height: 300px;
+}
+
+.movie_cards__overlay {
+    position: absolute;
+    padding: 0 1rem 1rem 1rem;
+    bottom: 0px;
+    height: 290px;
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    justify-content: flex-end;
+    background-image: linear-gradient(rgb(0,0,0,0), rgb(0,0,0,1));
+    opacity: 0;
+    transition: opacity .2s;
+}   
+
+.movie_cards__overlay:hover {
+    opacity: 1;
+}
+
+.movie_card__title {
+    font-weight: 900;
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
+}
+
+.movie_card__genres {
+    margin-bottom: 4px;
+}
+
+.movie_card__genre {
+    font-size: .75rem;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding:2px;
+    margin-right:3px;
+    float: left;
+    margin-top: 4px;
+}
+
+.movie_card__runtime {
+    font-size: .75rem;
+    margin-bottom: 0.25rem;
+    margin-top:0.25rem;
+}
+
+.movie_card__rating {
+    float: right;
+}
+
+.movie_card__year {
+    font-size: .75rem;
+    margin-bottom: 0.25rem;
+    margin-top:0.25rem;
+}
+
+.metacritic_image{
+    width: 0.75rem;
+    height: 10px;
+}
+.movie_card_meta_rating {
+    float: right;
+    gap:4px;
+    display: flex;
+}
+
+.movie_card__description {
+    font-style: italic;
+    font-size: .75rem;
+    margin-bottom: 0.25rem;
+}
